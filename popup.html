@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>15 Minute Time Tracker</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Daily Priority Prompt (shown first if needed) -->
+    <div id="priorityPrompt" class="priority-prompt" style="display: none;">
+      <div class="logo-container">
+        <img src="icons/icon.png" alt="Time Tracker" class="logo">
+      </div>
+      <h1>What matters most today?</h1>
+      <p>Declare your top priority for today in one sentence.</p>
+      <textarea 
+        id="priorityInput" 
+        class="priority-input" 
+        placeholder="e.g., Finish the quarterly report and send to stakeholders"
+        maxlength="200"
+      ></textarea>
+      <button id="prioritySubmit" class="submit-button">Set Priority</button>
+    </div>
+
+    <!-- Interrupt Tagging Screen -->
+    <div id="taggingScreen" class="tagging-screen" style="display: none;">
+      <div class="logo-container">
+        <img src="icons/icon.png" alt="Time Tracker" class="logo">
+      </div>
+      <h1>Label your last 15 minutes</h1>
+      <p>Select exactly one label. This cannot be skipped.</p>
+      
+      <div id="labelButtons" class="label-buttons">
+        <!-- Labels will be inserted here -->
+      </div>
+      
+      <textarea 
+        id="noteInput" 
+        class="note-input" 
+        placeholder="Optional note (max 100 characters)"
+        maxlength="100"
+      ></textarea>
+      <div id="charCount" class="char-count">0 / 100</div>
+      
+      <button id="submitButton" class="submit-button" disabled>Submit</button>
+    </div>
+
+    <!-- Daily Review Screen -->
+    <div id="dailyReview" class="daily-review" style="display: none;">
+      <div class="logo-container">
+        <img src="icons/icon.png" alt="Time Tracker" class="logo">
+      </div>
+      <h1>Today's Review</h1>
+      <div id="dailyPriorityDisplay" class="priority-display"></div>
+      <div id="dailyInsight" class="insight-box"></div>
+      <button id="closeDailyReview" class="submit-button">Close</button>
+    </div>
+
+    <!-- Weekly Review Screen -->
+    <div id="weeklyReview" class="weekly-review" style="display: none;">
+      <div class="logo-container">
+        <img src="icons/icon.png" alt="Time Tracker" class="logo">
+      </div>
+      <h1>Weekly Review</h1>
+      <div id="weeklyContent" class="weekly-summary"></div>
+      <button id="closeWeeklyReview" class="submit-button">Close</button>
+    </div>
+
+    <!-- Data View Screen -->
+    <div id="dataView" class="data-view" style="display: none;">
+      <div class="logo-container">
+        <img src="icons/icon.png" alt="Time Tracker" class="logo">
+      </div>
+      <div class="data-view-header">
+        <h1>Time Blocks</h1>
+        <div class="view-toggle">
+          <button id="listViewBtn" class="view-toggle-btn active" data-view="list">List</button>
+          <button id="tableViewBtn" class="view-toggle-btn" data-view="table">Table</button>
+        </div>
+      </div>
+      <div class="data-view-wrapper">
+        <div id="dataViewContent" class="data-view-content"></div>
+      </div>
+      <div class="data-view-footer">
+        <button id="closeDataView" class="submit-button sticky-close-button">Close</button>
+      </div>
+    </div>
+
+    <!-- Settings Screen -->
+    <div id="settingsScreen" class="settings-screen" style="display: none;">
+      <div class="logo-container">
+        <img src="icons/icon.png" alt="Time Tracker" class="logo">
+      </div>
+      <h1>Settings</h1>
+      <div class="settings-section">
+        <h2>Labels</h2>
+        <p class="settings-description">Create and manage your custom labels for time tracking.</p>
+        <div id="labelsList" class="labels-list">
+          <!-- Labels will be inserted here -->
+        </div>
+        <div class="add-label-form">
+          <input 
+            type="text" 
+            id="newLabelInput" 
+            class="label-input" 
+            placeholder="Enter new label name"
+            maxlength="50"
+          />
+          <button id="addLabelButton" class="add-label-button">Add Label</button>
+        </div>
+        <button id="closeSettings" class="submit-button">Close</button>
+      </div>
+    </div>
+
+    <!-- Main Menu (when no active screen) -->
+    <div id="mainMenu" class="main-menu">
+      <div class="logo-container">
+        <img src="icons/icon.png" alt="Time Tracker" class="logo">
+      </div>
+      <h1>15 Minute Time Tracker</h1>
+      <div id="timerStatus" class="timer-status"></div>
+      <div class="timer-controls">
+        <button id="startTimer" class="timer-button start-button">Start</button>
+        <button id="stopTimer" class="timer-button stop-button" style="display: none;">Stop</button>
+      </div>
+      <div class="menu-buttons">
+        <button id="viewData" class="menu-button">View All Data</button>
+        <button id="viewDailyReview" class="menu-button">Today's Review</button>
+        <button id="viewWeeklyReview" class="menu-button">Weekly Review</button>
+        <button id="viewSettings" class="menu-button">Settings</button>
+      </div>
+    </div>
+  </div>
+  
+  <script src="utils.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
+
