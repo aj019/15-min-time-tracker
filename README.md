@@ -1,5 +1,11 @@
 # 15 Minute Time Tracker
 
+<img width="2752" height="1537" alt="screenshot_1_timer" src="https://github.com/user-attachments/assets/6e6b7b26-5173-4117-8d3a-8f81a362d6e4" />
+<img width="2761" height="1545" alt="screenshot_2_timeblocks" src="https://github.com/user-attachments/assets/0138720d-ff17-46e0-84a7-069e4d8cd82b" />
+<img width="2761" height="1545" alt="screenshot_3_labels" src="https://github.com/user-attachments/assets/b0b2ae41-19f5-43c8-98c0-be962ed25e7a" />
+<img width="1280" height="716" alt="screenshot_4_review" src="https://github.com/user-attachments/assets/10429c06-4f3e-4213-8556-b015d2cffa76" />
+
+
 A Chrome extension that forces honest time tracking through intentional friction. Every 15 minutes, you must label your time block - no skipping, no excuses.
 
 ## Philosophy
